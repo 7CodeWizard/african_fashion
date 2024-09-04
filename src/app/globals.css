@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilize o dia selecionado */
+.react-datepicker__day--selected {
+  background-color: #590BD8 !important;
+  color: white;
+  /* Adicione uma cor de texto para melhor legibilidade */
+  border-radius: 50%;
+  /* Adicione uma borda arredondada ao dia selecionado */
+}
+
+/* Estilize os dias não selecionados ao passar o mouse */
+.react-datepicker__day:not(.react-datepicker__day--disabled):not(.react-datepicker__day--selected):hover {
+  transition: all 0.4s;
+  background-color: #590BD8 !important;
+  color: white;
+  border-radius: 50%;
+  /* Adicione uma borda arredondada */
+}
+
+/* Estilize os dias não selecionados */
+.react-datepicker__day:not(.react-datepicker__day--disabled):not(.react-datepicker__day--selected) {
+  background-color: transparent !important;
+  /* Remova o fundo padrão */
+  @apply bg-purple-100;
+  /* Use a classe bg-purple-100 para fundo personalizado */
+}
+
+/* Estilize os dias desabilitados */
+.react-datepicker__day--disabled {
+  background-color: transparent !important;
+  /* Remova o fundo padrão */
+  @apply bg-gray-50 cursor-not-allowed;
+  /* Use a classe bg-gray-50 e cursor-not-allowed para desabilitados */
+}
+
+/* Estilize os dias desabilitados ao passar o mouse */
+.react-datepicker__day--disabled:hover {
+  background-color: transparent !important;
+  /* Remova o fundo padrão */
+  @apply bg-gray-50 cursor-not-allowed;
+  /* Use a classe bg-gray-50 e cursor-not-allowed para desabilitados */
+}
+
+/* Estilize o cabeçalho do calendário */
+.react-datepicker__header {
+  background-color: #590BD8;
+  /* Cor de fundo para o cabeçalho */
+  color: white;
+  /* Cor de texto para o cabeçalho */
+  @apply bg-purple-200;
+  /* Use a classe bg-purple-200 para um fundo personalizado */
+}
+
+/* Estilize o mês e o ano no cabeçalho */
+.react-datepicker__current-month,
+.react-datepicker__current-year {
+  color: white;
+  /* Cor de texto para o mês e ano no cabeçalho */
+}
+
+.swiper-button-prev:after {
+  left: calc(32%)
+}
+
+.swiper-button-next:after {
+  left: calc(32%);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 42px !important;
+  height: 42px !important;
+  background: rgba(255, 255, 255, 0.70);
+  border-radius: 50%;
+}
+
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 22px;
+}
+
+.swiper-pagination-bullet {
+  opacity: 0.6 !important;
+  background-color: #fff !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: #fff !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: #000;
+  font-size: 22px !important;
+  font-weight: bold;
+  position: absolute;
+
+}
